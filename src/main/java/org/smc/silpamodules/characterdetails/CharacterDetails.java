@@ -34,7 +34,7 @@ public class CharacterDetails {
             String codePoint = Integer.toHexString(ch);
             while (codePoint.length() != 4) codePoint = "0" + codePoint;
             codePoint = "\\u" + codePoint;
-            String canonicalDecomposition = Normalizer.normalize(text, Normalizer.Form.NFD);
+            String canonicalDecomposition = Normalizer.normalize(ch + "", Normalizer.Form.NFD);
 
             CharacterDetailsObject obj = new CharacterDetailsObject(isDigit, isAlphabet, isAlphaNumeric,
                     htmlEntity,
