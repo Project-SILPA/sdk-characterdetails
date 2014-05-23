@@ -37,6 +37,22 @@ public class TestCharacterDetails extends AndroidTestCase {
     @SmallTest
     @MediumTest
     @LargeTest
+    public void testGetCharacterDetails() {
+        CharacterDetails obj = new CharacterDetails();
+        CharacterDetailsObject details = obj.getCharacterDetails('S');
+
+        assertEquals(false, details.isDigit());
+        assertEquals(true, details.isAlphabet());
+        assertEquals(true, details.isAlphaNumeric());
+        assertEquals(83, details.getHtmlEntity());
+        assertEquals("LATIN CAPITAL LETTER S", details.getName());
+        assertEquals("\\u0053", details.getCodePoint());
+        assertEquals("S", details.getCanonicalDecomposition());
+    }
+
+    @SmallTest
+    @MediumTest
+    @LargeTest
     public void testGetCharacterDetailsAsMap() {
         CharacterDetails obj = new CharacterDetails();
         Map<Character, CharacterDetailsObject> map = obj.getCharacterDetailsAsMap("$V.");
