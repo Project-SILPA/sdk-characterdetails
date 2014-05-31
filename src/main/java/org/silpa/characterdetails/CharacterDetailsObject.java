@@ -1,4 +1,4 @@
-package org.smc.silpamodules.characterdetails;
+package org.silpa.characterdetails;
 
 /**
  * Created by sujith on 23/5/14.

@@ -1,4 +1,4 @@
-package org.smc.silpamodules.characterdetails;
+package org.silpa.characterdetails;
 
 import java.text.Normalizer;
 import java.util.HashMap;
@@ -9,8 +9,8 @@ import java.util.Map;
  */
 public class CharacterDetails {
 
-    public static final String CHARACTER_DETAILS_MODULE_NAME = "Character Details";
-    public static final String CHARACTER_DETAILS_MODULE_INFORMATION = "Shows the Unicode Character " +
+    public static final String MODULE_NAME = "Character Details";
+    public static final String MODULE_INFORMATION = "Shows the Unicode Character " +
             "Details of a given character";
 
     /**
@@ -86,7 +86,7 @@ public class CharacterDetails {
      * @return name of module
      */
     public String getModuleName() {
-        return CharacterDetails.CHARACTER_DETAILS_MODULE_NAME;
+        return CharacterDetails.MODULE_NAME;
     }
 
     /**
@@ -95,6 +95,6 @@ public class CharacterDetails {
      * @return brief information regarding the module
      */
     public String getModuleInformation() {
-        return CharacterDetails.CHARACTER_DETAILS_MODULE_INFORMATION;
+        return CharacterDetails.MODULE_INFORMATION;
     }
 }

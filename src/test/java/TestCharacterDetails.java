@@ -3,8 +3,8 @@ import android.test.suitebuilder.annotation.LargeTest;
 import android.test.suitebuilder.annotation.MediumTest;
 import android.test.suitebuilder.annotation.SmallTest;
 
-import org.smc.silpamodules.characterdetails.CharacterDetails;
-import org.smc.silpamodules.characterdetails.CharacterDetailsObject;
+import org.silpa.characterdetails.CharacterDetails;
+import org.silpa.characterdetails.CharacterDetailsObject;
 
 import java.util.Map;
 
@@ -23,7 +23,7 @@ public class TestCharacterDetails extends AndroidTestCase {
     @LargeTest
     public void testGetModuleName() {
         CharacterDetails obj = new CharacterDetails();
-        assertEquals(CharacterDetails.CHARACTER_DETAILS_MODULE_NAME, obj.getModuleName());
+        assertEquals(CharacterDetails.MODULE_NAME, obj.getModuleName());
     }
 
     @SmallTest
@@ -31,7 +31,7 @@ public class TestCharacterDetails extends AndroidTestCase {
     @LargeTest
     public void testGetModuleInformation() {
         CharacterDetails obj = new CharacterDetails();
-        assertEquals(CharacterDetails.CHARACTER_DETAILS_MODULE_INFORMATION, obj.getModuleInformation());
+        assertEquals(CharacterDetails.MODULE_INFORMATION, obj.getModuleInformation());
     }
 
     @SmallTest
