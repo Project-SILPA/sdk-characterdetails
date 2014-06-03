@@ -40,6 +40,7 @@ public class CharacterDetails {
             "Details of a given character";
 
     private static final String LOG_TAG = CharacterDetails.MODULE_NAME;
+    
 
     /**
      * Constructor
@@ -95,7 +96,6 @@ public class CharacterDetails {
             br.close();
         } catch (IOException ioe) {
             Log.e(LOG_TAG, "Error : " + ioe.getMessage());
-            return;
         }
     }
 
@@ -114,17 +114,15 @@ public class CharacterDetails {
             boolean isAlphabet = Character.isLetter(ch);
             boolean isAlphaNumeric = Character.isLetterOrDigit(ch);
 
-            int htmlEntity = ch;
-
             String codePoint = Integer.toHexString(ch).toUpperCase();
             while (codePoint.length() != 4) codePoint = "0" + codePoint;
 
             String name = mUnicodeDataMap.get(codePoint)[1];
-            Log.e(LOG_TAG, name);
+
             String canonicalDecomposition = Normalizer.normalize(ch + "", Normalizer.Form.NFD);
 
             CharacterDetailsObject obj = new CharacterDetailsObject(isDigit, isAlphabet, isAlphaNumeric,
-                    htmlEntity,
+                    (int) ch,
                     name, "\\u" + codePoint, canonicalDecomposition);
             map.put(ch, obj);
         }
