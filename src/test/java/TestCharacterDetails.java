@@ -39,8 +39,9 @@ public class TestCharacterDetails extends AndroidTestCase {
     @LargeTest
     public void testGetCharacterDetails() {
         CharacterDetails obj = new CharacterDetails(getContext());
-        CharacterDetailsObject details = obj.getCharacterDetails('S');
+        CharacterDetailsObject details;
 
+        details = obj.getCharacterDetails('S');
         assertEquals(false, details.isDigit());
         assertEquals(true, details.isAlphabet());
         assertEquals(true, details.isAlphaNumeric());
@@ -48,6 +49,106 @@ public class TestCharacterDetails extends AndroidTestCase {
         assertEquals("LATIN CAPITAL LETTER S", details.getName());
         assertEquals("\\u0053", details.getCodePoint());
         assertEquals("S", details.getCanonicalDecomposition());
+
+        details = obj.getCharacterDetails('ക');
+        assertEquals(false, details.isDigit());
+        assertEquals(true, details.isAlphabet());
+        assertEquals(true, details.isAlphaNumeric());
+        assertEquals(3349, details.getHtmlEntity());
+        assertEquals("MALAYALAM LETTER KA", details.getName());
+        assertEquals("\\u0D15", details.getCodePoint());
+        assertEquals("ക", details.getCanonicalDecomposition());
+
+        details = obj.getCharacterDetails('क');
+        assertEquals(false, details.isDigit());
+        assertEquals(true, details.isAlphabet());
+        assertEquals(true, details.isAlphaNumeric());
+        assertEquals(2325, details.getHtmlEntity());
+        assertEquals("DEVANAGARI LETTER KA", details.getName());
+        assertEquals("\\u0915", details.getCodePoint());
+        assertEquals("क", details.getCanonicalDecomposition());
+
+        details = obj.getCharacterDetails('আ');
+        assertEquals(false, details.isDigit());
+        assertEquals(true, details.isAlphabet());
+        assertEquals(true, details.isAlphaNumeric());
+        assertEquals(2438, details.getHtmlEntity());
+        assertEquals("BENGALI LETTER AA", details.getName());
+        assertEquals("\\u0986", details.getCodePoint());
+        assertEquals("আ", details.getCanonicalDecomposition());
+
+        details = obj.getCharacterDetails('ਉ');
+        assertEquals(false, details.isDigit());
+        assertEquals(true, details.isAlphabet());
+        assertEquals(true, details.isAlphaNumeric());
+        assertEquals(2569, details.getHtmlEntity());
+        assertEquals("GURMUKHI LETTER U", details.getName());
+        assertEquals("\\u0A09", details.getCodePoint());
+        assertEquals("ਉ", details.getCanonicalDecomposition());
+
+        details = obj.getCharacterDetails('ઊ');
+        assertEquals(false, details.isDigit());
+        assertEquals(true, details.isAlphabet());
+        assertEquals(true, details.isAlphaNumeric());
+        assertEquals(2698, details.getHtmlEntity());
+        assertEquals("GUJARATI LETTER UU", details.getName());
+        assertEquals("\\u0A8A", details.getCodePoint());
+        assertEquals("ઊ", details.getCanonicalDecomposition());
+
+        details = obj.getCharacterDetails('ଉ');
+        assertEquals(false, details.isDigit());
+        assertEquals(true, details.isAlphabet());
+        assertEquals(true, details.isAlphaNumeric());
+        assertEquals(2825, details.getHtmlEntity());
+        assertEquals("ORIYA LETTER U", details.getName());
+        assertEquals("\\u0B09", details.getCodePoint());
+        assertEquals("ଉ", details.getCanonicalDecomposition());
+
+        details = obj.getCharacterDetails('இ');
+        assertEquals(false, details.isDigit());
+        assertEquals(true, details.isAlphabet());
+        assertEquals(true, details.isAlphaNumeric());
+        assertEquals(2951, details.getHtmlEntity());
+        assertEquals("TAMIL LETTER I", details.getName());
+        assertEquals("\\u0B87", details.getCodePoint());
+        assertEquals("இ", details.getCanonicalDecomposition());
+
+        details = obj.getCharacterDetails('ఋ');
+        assertEquals(false, details.isDigit());
+        assertEquals(true, details.isAlphabet());
+        assertEquals(true, details.isAlphaNumeric());
+        assertEquals(3083, details.getHtmlEntity());
+        assertEquals("TELUGU LETTER VOCALIC R", details.getName());
+        assertEquals("\\u0C0B", details.getCodePoint());
+        assertEquals("ఋ", details.getCanonicalDecomposition());
+
+        details = obj.getCharacterDetails('4');
+        assertEquals(true, details.isDigit());
+        assertEquals(false, details.isAlphabet());
+        assertEquals(true, details.isAlphaNumeric());
+        assertEquals(52, details.getHtmlEntity());
+        assertEquals("DIGIT FOUR", details.getName());
+        assertEquals("\\u0034", details.getCodePoint());
+        assertEquals("4", details.getCanonicalDecomposition());
+
+        details = obj.getCharacterDetails('0');
+        assertEquals(true, details.isDigit());
+        assertEquals(false, details.isAlphabet());
+        assertEquals(true, details.isAlphaNumeric());
+        assertEquals(48, details.getHtmlEntity());
+        assertEquals("DIGIT ZERO", details.getName());
+        assertEquals("\\u0030", details.getCodePoint());
+        assertEquals("0", details.getCanonicalDecomposition());
+
+        details = obj.getCharacterDetails('!');
+        assertEquals(false, details.isDigit());
+        assertEquals(false, details.isAlphabet());
+        assertEquals(false, details.isAlphaNumeric());
+        assertEquals(33, details.getHtmlEntity());
+        assertEquals("EXCLAMATION MARK", details.getName());
+        assertEquals("\\u0021", details.getCodePoint());
+        assertEquals("!", details.getCanonicalDecomposition());
+
     }
 
     @SmallTest
@@ -87,7 +188,6 @@ public class TestCharacterDetails extends AndroidTestCase {
     @MediumTest
     @LargeTest
     public void testGetCharacterDetailsAsArray() {
-
         CharacterDetails obj = new CharacterDetails(getContext());
         CharacterDetailsObject[] arr = obj.getCharacterDetailsAsArray("$V.");
 
