@@ -3,11 +3,11 @@ CharacterDetails
 
 CharacterDetails module can be used to get details of a given unicode character.
 
-This module is a Java implementation of CharacterDetails module developed by SMC and is a part of SILPA Android SDK.
+This module is a Java implementation of CharacterDetails module - [SILPA](http://silpa.org.in/) and is a part of SILPA Android SDK.
 
 ### Note :
 1. This module is still under development and is part of SILPA Android SDK
-2. This module belongs to SILPA project - SMC. Please check http://silpa.org.in/Chardetails
+2. This module belongs to SILPA project. Please check http://silpa.org.in/Chardetails
 
 
 ### Important Links
