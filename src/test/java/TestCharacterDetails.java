@@ -22,7 +22,7 @@ public class TestCharacterDetails extends AndroidTestCase {
     @MediumTest
     @LargeTest
     public void testGetModuleName() {
-        CharacterDetails obj = new CharacterDetails();
+        CharacterDetails obj = new CharacterDetails(getContext());
         assertEquals(CharacterDetails.MODULE_NAME, obj.getModuleName());
     }
 
@@ -30,7 +30,7 @@ public class TestCharacterDetails extends AndroidTestCase {
     @MediumTest
     @LargeTest
     public void testGetModuleInformation() {
-        CharacterDetails obj = new CharacterDetails();
+        CharacterDetails obj = new CharacterDetails(getContext());
         assertEquals(CharacterDetails.MODULE_INFORMATION, obj.getModuleInformation());
     }
 
@@ -38,7 +38,7 @@ public class TestCharacterDetails extends AndroidTestCase {
     @MediumTest
     @LargeTest
     public void testGetCharacterDetails() {
-        CharacterDetails obj = new CharacterDetails();
+        CharacterDetails obj = new CharacterDetails(getContext());
         CharacterDetailsObject details = obj.getCharacterDetails('S');
 
         assertEquals(false, details.isDigit());
@@ -54,7 +54,8 @@ public class TestCharacterDetails extends AndroidTestCase {
     @MediumTest
     @LargeTest
     public void testGetCharacterDetailsAsMap() {
-        CharacterDetails obj = new CharacterDetails();
+
+        CharacterDetails obj = new CharacterDetails(getContext());
         Map<Character, CharacterDetailsObject> map = obj.getCharacterDetailsAsMap("$V.");
 
         assertEquals(false, map.get('$').isDigit());
@@ -78,7 +79,7 @@ public class TestCharacterDetails extends AndroidTestCase {
         assertEquals(false, map.get('.').isAlphaNumeric());
         assertEquals(46, map.get('.').getHtmlEntity());
         assertEquals("FULL STOP", map.get('.').getName());
-        assertEquals("\\u002e", map.get('.').getCodePoint());
+        assertEquals("\\u002E", map.get('.').getCodePoint());
         assertEquals(".", map.get('.').getCanonicalDecomposition());
     }
 
@@ -86,7 +87,8 @@ public class TestCharacterDetails extends AndroidTestCase {
     @MediumTest
     @LargeTest
     public void testGetCharacterDetailsAsArray() {
-        CharacterDetails obj = new CharacterDetails();
+
+        CharacterDetails obj = new CharacterDetails(getContext());
         CharacterDetailsObject[] arr = obj.getCharacterDetailsAsArray("$V.");
 
         assertEquals(false, arr[0].isDigit());
@@ -110,7 +112,7 @@ public class TestCharacterDetails extends AndroidTestCase {
         assertEquals(false, arr[2].isAlphaNumeric());
         assertEquals(46, arr[2].getHtmlEntity());
         assertEquals("FULL STOP", arr[2].getName());
-        assertEquals("\\u002e", arr[2].getCodePoint());
+        assertEquals("\\u002E", arr[2].getCodePoint());
         assertEquals(".", arr[2].getCanonicalDecomposition());
     }
 
