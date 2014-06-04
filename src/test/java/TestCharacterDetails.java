@@ -157,7 +157,7 @@ public class TestCharacterDetails extends AndroidTestCase {
     public void testGetCharacterDetailsAsMap() {
 
         CharacterDetails obj = new CharacterDetails(getContext());
-        Map<Character, CharacterDetailsObject> map = obj.getCharacterDetailsAsMap("$V.");
+        Map<Character, CharacterDetailsObject> map = obj.getCharacterDetailsAsMap("$V.#ऐকਕઔଓஒகఖಕഌ");
 
         assertEquals(false, map.get('$').isDigit());
         assertEquals(false, map.get('$').isAlphabet());
@@ -182,6 +182,94 @@ public class TestCharacterDetails extends AndroidTestCase {
         assertEquals("FULL STOP", map.get('.').getName());
         assertEquals("\\u002E", map.get('.').getCodePoint());
         assertEquals(".", map.get('.').getCanonicalDecomposition());
+
+        assertEquals(false, map.get('#').isDigit());
+        assertEquals(false, map.get('#').isAlphabet());
+        assertEquals(false, map.get('#').isAlphaNumeric());
+        assertEquals(35, map.get('#').getHtmlEntity());
+        assertEquals("NUMBER SIGN", map.get('#').getName());
+        assertEquals("\\u0023", map.get('#').getCodePoint());
+        assertEquals("#", map.get('#').getCanonicalDecomposition());
+
+        assertEquals(false, map.get('ऐ').isDigit());
+        assertEquals(true, map.get('ऐ').isAlphabet());
+        assertEquals(true, map.get('ऐ').isAlphaNumeric());
+        assertEquals(2320, map.get('ऐ').getHtmlEntity());
+        assertEquals("DEVANAGARI LETTER AI", map.get('ऐ').getName());
+        assertEquals("\\u0910", map.get('ऐ').getCodePoint());
+        assertEquals("ऐ", map.get('ऐ').getCanonicalDecomposition());
+
+        assertEquals(false, map.get('ক').isDigit());
+        assertEquals(true, map.get('ক').isAlphabet());
+        assertEquals(true, map.get('ক').isAlphaNumeric());
+        assertEquals(2453, map.get('ক').getHtmlEntity());
+        assertEquals("BENGALI LETTER KA", map.get('ক').getName());
+        assertEquals("\\u0995", map.get('ক').getCodePoint());
+        assertEquals("ক", map.get('ক').getCanonicalDecomposition());
+
+        assertEquals(false, map.get('ਕ').isDigit());
+        assertEquals(true, map.get('ਕ').isAlphabet());
+        assertEquals(true, map.get('ਕ').isAlphaNumeric());
+        assertEquals(2581, map.get('ਕ').getHtmlEntity());
+        assertEquals("GURMUKHI LETTER KA", map.get('ਕ').getName());
+        assertEquals("\\u0A15", map.get('ਕ').getCodePoint());
+        assertEquals("ਕ", map.get('ਕ').getCanonicalDecomposition());
+
+        assertEquals(false, map.get('ઔ').isDigit());
+        assertEquals(true, map.get('ઔ').isAlphabet());
+        assertEquals(true, map.get('ઔ').isAlphaNumeric());
+        assertEquals(2708, map.get('ઔ').getHtmlEntity());
+        assertEquals("GUJARATI LETTER AU", map.get('ઔ').getName());
+        assertEquals("\\u0A94", map.get('ઔ').getCodePoint());
+        assertEquals("ઔ", map.get('ઔ').getCanonicalDecomposition());
+
+        assertEquals(false, map.get('ଓ').isDigit());
+        assertEquals(true, map.get('ଓ').isAlphabet());
+        assertEquals(true, map.get('ଓ').isAlphaNumeric());
+        assertEquals(2835, map.get('ଓ').getHtmlEntity());
+        assertEquals("ORIYA LETTER O", map.get('ଓ').getName());
+        assertEquals("\\u0B13", map.get('ଓ').getCodePoint());
+        assertEquals("ଓ", map.get('ଓ').getCanonicalDecomposition());
+
+        assertEquals(false, map.get('ஒ').isDigit());
+        assertEquals(true, map.get('ஒ').isAlphabet());
+        assertEquals(true, map.get('ஒ').isAlphaNumeric());
+        assertEquals(2962, map.get('ஒ').getHtmlEntity());
+        assertEquals("TAMIL LETTER O", map.get('ஒ').getName());
+        assertEquals("\\u0B92", map.get('ஒ').getCodePoint());
+        assertEquals("ஒ", map.get('ஒ').getCanonicalDecomposition());
+
+        assertEquals(false, map.get('க').isDigit());
+        assertEquals(true, map.get('க').isAlphabet());
+        assertEquals(true, map.get('க').isAlphaNumeric());
+        assertEquals(2965, map.get('க').getHtmlEntity());
+        assertEquals("TAMIL LETTER KA", map.get('க').getName());
+        assertEquals("\\u0B95", map.get('க').getCodePoint());
+        assertEquals("க", map.get('க').getCanonicalDecomposition());
+
+        assertEquals(false, map.get('ఖ').isDigit());
+        assertEquals(true, map.get('ఖ').isAlphabet());
+        assertEquals(true, map.get('ఖ').isAlphaNumeric());
+        assertEquals(3094, map.get('ఖ').getHtmlEntity());
+        assertEquals("TELUGU LETTER KHA", map.get('ఖ').getName());
+        assertEquals("\\u0C16", map.get('ఖ').getCodePoint());
+        assertEquals("ఖ", map.get('ఖ').getCanonicalDecomposition());
+
+        assertEquals(false, map.get('ಕ').isDigit());
+        assertEquals(true, map.get('ಕ').isAlphabet());
+        assertEquals(true, map.get('ಕ').isAlphaNumeric());
+        assertEquals(3221, map.get('ಕ').getHtmlEntity());
+        assertEquals("KANNADA LETTER KA", map.get('ಕ').getName());
+        assertEquals("\\u0C95", map.get('ಕ').getCodePoint());
+        assertEquals("ಕ", map.get('ಕ').getCanonicalDecomposition());
+
+        assertEquals(false, map.get('ഌ').isDigit());
+        assertEquals(true, map.get('ഌ').isAlphabet());
+        assertEquals(true, map.get('ഌ').isAlphaNumeric());
+        assertEquals(3340, map.get('ഌ').getHtmlEntity());
+        assertEquals("MALAYALAM LETTER VOCALIC L", map.get('ഌ').getName());
+        assertEquals("\\u0D0C", map.get('ഌ').getCodePoint());
+        assertEquals("ഌ", map.get('ഌ').getCanonicalDecomposition());
     }
 
     @SmallTest
@@ -189,31 +277,95 @@ public class TestCharacterDetails extends AndroidTestCase {
     @LargeTest
     public void testGetCharacterDetailsAsArray() {
         CharacterDetails obj = new CharacterDetails(getContext());
-        CharacterDetailsObject[] arr = obj.getCharacterDetailsAsArray("$V.");
+        CharacterDetailsObject[] arr = obj.getCharacterDetailsAsArray("शઽಶശಹਸল%+X7");
 
         assertEquals(false, arr[0].isDigit());
-        assertEquals(false, arr[0].isAlphabet());
-        assertEquals(false, arr[0].isAlphaNumeric());
-        assertEquals(36, arr[0].getHtmlEntity());
-        assertEquals("DOLLAR SIGN", arr[0].getName());
-        assertEquals("\\u0024", arr[0].getCodePoint());
-        assertEquals("$", arr[0].getCanonicalDecomposition());
+        assertEquals(true, arr[0].isAlphabet());
+        assertEquals(true, arr[0].isAlphaNumeric());
+        assertEquals(2358, arr[0].getHtmlEntity());
+        assertEquals("DEVANAGARI LETTER SHA", arr[0].getName());
+        assertEquals("\\u0936", arr[0].getCodePoint());
+        assertEquals("श", arr[0].getCanonicalDecomposition());
 
         assertEquals(false, arr[1].isDigit());
         assertEquals(true, arr[1].isAlphabet());
         assertEquals(true, arr[1].isAlphaNumeric());
-        assertEquals(86, arr[1].getHtmlEntity());
-        assertEquals("LATIN CAPITAL LETTER V", arr[1].getName());
-        assertEquals("\\u0056", arr[1].getCodePoint());
-        assertEquals("V", arr[1].getCanonicalDecomposition());
+        assertEquals(2749, arr[1].getHtmlEntity());
+        assertEquals("GUJARATI SIGN AVAGRAHA", arr[1].getName());
+        assertEquals("\\u0ABD", arr[1].getCodePoint());
+        assertEquals("ઽ", arr[1].getCanonicalDecomposition());
 
         assertEquals(false, arr[2].isDigit());
-        assertEquals(false, arr[2].isAlphabet());
-        assertEquals(false, arr[2].isAlphaNumeric());
-        assertEquals(46, arr[2].getHtmlEntity());
-        assertEquals("FULL STOP", arr[2].getName());
-        assertEquals("\\u002E", arr[2].getCodePoint());
-        assertEquals(".", arr[2].getCanonicalDecomposition());
+        assertEquals(true, arr[2].isAlphabet());
+        assertEquals(true, arr[2].isAlphaNumeric());
+        assertEquals(3254, arr[2].getHtmlEntity());
+        assertEquals("KANNADA LETTER SHA", arr[2].getName());
+        assertEquals("\\u0CB6", arr[2].getCodePoint());
+        assertEquals("ಶ", arr[2].getCanonicalDecomposition());
+
+        assertEquals(false, arr[3].isDigit());
+        assertEquals(true, arr[3].isAlphabet());
+        assertEquals(true, arr[3].isAlphaNumeric());
+        assertEquals(3382, arr[3].getHtmlEntity());
+        assertEquals("MALAYALAM LETTER SHA", arr[3].getName());
+        assertEquals("\\u0D36", arr[3].getCodePoint());
+        assertEquals("ശ", arr[3].getCanonicalDecomposition());
+
+        assertEquals(false, arr[4].isDigit());
+        assertEquals(true, arr[4].isAlphabet());
+        assertEquals(true, arr[4].isAlphaNumeric());
+        assertEquals(3257, arr[4].getHtmlEntity());
+        assertEquals("KANNADA LETTER HA", arr[4].getName());
+        assertEquals("\\u0CB9", arr[4].getCodePoint());
+        assertEquals("ಹ", arr[4].getCanonicalDecomposition());
+
+        assertEquals(false, arr[5].isDigit());
+        assertEquals(true, arr[5].isAlphabet());
+        assertEquals(true, arr[5].isAlphaNumeric());
+        assertEquals(2616, arr[5].getHtmlEntity());
+        assertEquals("GURMUKHI LETTER SA", arr[5].getName());
+        assertEquals("\\u0A38", arr[5].getCodePoint());
+        assertEquals("ਸ", arr[5].getCanonicalDecomposition());
+
+        assertEquals(false, arr[6].isDigit());
+        assertEquals(true, arr[6].isAlphabet());
+        assertEquals(true, arr[6].isAlphaNumeric());
+        assertEquals(2482, arr[6].getHtmlEntity());
+        assertEquals("BENGALI LETTER LA", arr[6].getName());
+        assertEquals("\\u09B2", arr[6].getCodePoint());
+        assertEquals("ল", arr[6].getCanonicalDecomposition());
+
+        assertEquals(false, arr[7].isDigit());
+        assertEquals(false, arr[7].isAlphabet());
+        assertEquals(false, arr[7].isAlphaNumeric());
+        assertEquals(37, arr[7].getHtmlEntity());
+        assertEquals("PERCENT SIGN", arr[7].getName());
+        assertEquals("\\u0025", arr[7].getCodePoint());
+        assertEquals("%", arr[7].getCanonicalDecomposition());
+
+        assertEquals(false, arr[8].isDigit());
+        assertEquals(false, arr[8].isAlphabet());
+        assertEquals(false, arr[8].isAlphaNumeric());
+        assertEquals(43, arr[8].getHtmlEntity());
+        assertEquals("PLUS SIGN", arr[8].getName());
+        assertEquals("\\u002B", arr[8].getCodePoint());
+        assertEquals("+", arr[8].getCanonicalDecomposition());
+
+        assertEquals(false, arr[9].isDigit());
+        assertEquals(true, arr[9].isAlphabet());
+        assertEquals(true, arr[9].isAlphaNumeric());
+        assertEquals(88, arr[9].getHtmlEntity());
+        assertEquals("LATIN CAPITAL LETTER X", arr[9].getName());
+        assertEquals("\\u0058", arr[9].getCodePoint());
+        assertEquals("X", arr[9].getCanonicalDecomposition());
+
+        assertEquals(true, arr[10].isDigit());
+        assertEquals(false, arr[10].isAlphabet());
+        assertEquals(true, arr[10].isAlphaNumeric());
+        assertEquals(55, arr[10].getHtmlEntity());
+        assertEquals("DIGIT SEVEN", arr[10].getName());
+        assertEquals("\\u0037", arr[10].getCodePoint());
+        assertEquals("7", arr[10].getCanonicalDecomposition());
     }
 
     @Override

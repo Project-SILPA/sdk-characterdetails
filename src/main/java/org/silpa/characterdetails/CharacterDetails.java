@@ -8,6 +8,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.Normalizer;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -40,7 +41,7 @@ public class CharacterDetails {
             "Details of a given character";
 
     private static final String LOG_TAG = CharacterDetails.MODULE_NAME;
-    
+
 
     /**
      * Constructor
@@ -114,7 +115,7 @@ public class CharacterDetails {
             boolean isAlphabet = Character.isLetter(ch);
             boolean isAlphaNumeric = Character.isLetterOrDigit(ch);
 
-            String codePoint = Integer.toHexString(ch).toUpperCase();
+            String codePoint = Integer.toHexString(ch).toUpperCase(Locale.getDefault());
             while (codePoint.length() != 4) codePoint = "0" + codePoint;
 
             String name = mUnicodeDataMap.get(codePoint)[1];
