@@ -1,7 +1,7 @@
 CharacterDetails
 ================
 
-Travis master: [![Build Status](https://travis-ci.org/SujithVadakkepat/sdk-characterdetails.svg?branch=master)](https://travis-ci.org/SujithVadakkepat/sdk-characterdetails)
+Travis master: [![Build Status](https://travis-ci.org/Project-SILPA/sdk-characterdetails.svg)](https://travis-ci.org/Project-SILPA/sdk-characterdetails)
 
 
 SILPA - Unicode character details library
