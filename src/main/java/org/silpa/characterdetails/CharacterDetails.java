@@ -22,9 +22,9 @@ public class CharacterDetails {
     private static Map<String, String[]> mUnicodeDataMap;
 
     /**
-     * Name of file - UnicodeData.txt
+     * Resource id of file - UnicodeData.txt
      */
-    private static final String mUnicodeDataFileName = "UnicodeData.txt";
+    private static final int mUnicodeDataRawResourceID = R.raw.silpa_sdk_unicode_data;
 
     /**
      * Number of fields in UnicodeData.txt
@@ -71,7 +71,7 @@ public class CharacterDetails {
 
         try {
             br = new BufferedReader(new InputStreamReader(this.mContext.getResources().
-                    getAssets().open(mUnicodeDataFileName)));
+                    openRawResource(mUnicodeDataRawResourceID)));
 
             while (true) {
                 try {
