@@ -1,0 +1,96 @@
+package org.silpa.characterdetails;
+
+import android.content.Context;
+import android.util.AttributeSet;
+import android.widget.TextView;
+
+import java.util.Map;
+
+/**
+ * Created by sujith on 12/6/14.
+ */
+public class CharacterDetailsTextView extends TextView implements CharacterDetailsInterface {
+
+    private Context mContext;
+    private CharacterDetails characterDetails;
+
+    /**
+     * Constructor
+     *
+     * @param context context of application
+     */
+    public CharacterDetailsTextView(Context context) {
+        super(context);
+        init();
+    }
+
+    /**
+     * Constructor
+     *
+     * @param context context of application
+     * @param attrs   attribute set
+     */
+    public CharacterDetailsTextView(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init();
+    }
+
+    /**
+     * Constructor
+     *
+     * @param context  context of application
+     * @param attrs    attribute set
+     * @param defStyle default style
+     */
+    public CharacterDetailsTextView(Context context, AttributeSet attrs, int defStyle) {
+        super(context, attrs, defStyle);
+        init();
+    }
+
+    private void init() {
+        this.mContext = getContext();
+        this.characterDetails = new CharacterDetails(this.mContext);
+    }
+
+    /**
+     * Get character details of each character in an array.
+     *
+     * @param text string
+     * @return CharacterDetailsObject array
+     */
+    @Override
+    public CharacterDetailsObject[] getCharacterDetailsAsArray(String text) {
+        return this.characterDetails.getCharacterDetailsAsArray(getText().toString());
+    }
+
+    /**
+     * Get character details of each character as a map.
+     *
+     * @param text string
+     * @return map
+     */
+    @Override
+    public Map<Character, CharacterDetailsObject> getCharacterDetailsAsMap(String text) {
+        return this.characterDetails.getCharacterDetailsAsMap(getText().toString());
+    }
+
+    /**
+     * This function gives name of the module
+     *
+     * @return name of module
+     */
+    @Override
+    public String getModuleName() {
+        return this.characterDetails.getModuleName();
+    }
+
+    /**
+     * This function gives a brief description of the module
+     *
+     * @return brief information regarding the module
+     */
+    @Override
+    public String getModuleInformation() {
+        return this.characterDetails.getModuleInformation();
+    }
+}
