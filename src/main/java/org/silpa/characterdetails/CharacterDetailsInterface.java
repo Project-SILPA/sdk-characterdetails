@@ -10,18 +10,16 @@ public interface CharacterDetailsInterface {
     /**
      * Get character details of each character in an array.
      *
-     * @param text string
      * @return CharacterDetailsObject array
      */
-    public CharacterDetailsObject[] getCharacterDetailsAsArray(String text);
+    public CharacterDetailsObject[] getCharacterDetailsAsArray();
 
     /**
      * Get character details of each character as a map.
      *
-     * @param text string
      * @return map
      */
-    public Map<Character, CharacterDetailsObject> getCharacterDetailsAsMap(String text);
+    public Map<Character, CharacterDetailsObject> getCharacterDetailsAsMap();
 
     /**
      * This function gives name of the module

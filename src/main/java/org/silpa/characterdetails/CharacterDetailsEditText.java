@@ -55,22 +55,20 @@ public class CharacterDetailsEditText extends EditText implements CharacterDetai
     /**
      * Get character details of each character in an array.
      *
-     * @param text string
      * @return CharacterDetailsObject array
      */
     @Override
-    public CharacterDetailsObject[] getCharacterDetailsAsArray(String text) {
+    public CharacterDetailsObject[] getCharacterDetailsAsArray() {
         return this.characterDetails.getCharacterDetailsAsArray(getText().toString());
     }
 
     /**
      * Get character details of each character as a map.
      *
-     * @param text string
      * @return map
      */
     @Override
-    public Map<Character, CharacterDetailsObject> getCharacterDetailsAsMap(String text) {
+    public Map<Character, CharacterDetailsObject> getCharacterDetailsAsMap() {
         return this.characterDetails.getCharacterDetailsAsMap(getText().toString());
     }
 
