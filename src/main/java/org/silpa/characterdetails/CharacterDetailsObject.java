@@ -130,4 +130,37 @@ public class CharacterDetailsObject {
     public String getCanonicalDecomposition() {
         return this.canonicalDecomposition;
     }
+
+    /**
+     * Override toString
+     *
+     * @return print CharacterDetails
+     */
+    @Override
+    public String toString() {
+        return "[ " + "Digit : " + this.isDigit + "\n" +
+                "HTML Entity : " + this.htmlEntity + "\n" +
+                "Name : " + this.name + "\n" +
+                "Alphabet : " + this.isAlphabet + "\n" +
+                "Canonical Decomposition : " + this.canonicalDecomposition + "\n" +
+                "AlphaNumeric : " + this.isAlphaNumeric + "\n" +
+                "Code point : " + this.codePoint + " ]";
+    }
+
+    /**
+     * Checks if two character objects are equal or not
+     *
+     * @param obj CharacterDetails object
+     * @return true if equal else false
+     */
+    public boolean equals(CharacterDetailsObject obj) {
+        return ((this.isDigit() == obj.isDigit) &&
+                (this.getHtmlEntity() == obj.getHtmlEntity()) &&
+                (this.getName().equals(obj.getName())) &&
+                (this.isAlphabet() == obj.isAlphabet()) &&
+                (this.getCanonicalDecomposition().equals(obj.getCanonicalDecomposition())) &&
+                (this.isAlphaNumeric() == obj.isAlphaNumeric()) &&
+                (this.getCodePoint().equals(obj.getCodePoint())));
+
+    }
 }

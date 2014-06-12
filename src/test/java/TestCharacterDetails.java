@@ -417,6 +417,15 @@ public class TestCharacterDetails extends AndroidTestCase {
         assertEquals("९", arr[12].getCanonicalDecomposition());
     }
 
+    @SmallTest
+    @MediumTest
+    @LargeTest
+    public void testEquals() {
+        CharacterDetails obj = new CharacterDetails(getContext());
+        assertEquals(true, obj.getCharacterDetails('ക').equals(obj.getCharacterDetails('ക')));
+        assertEquals(false, obj.getCharacterDetails('ऐ').equals(obj.getCharacterDetails('ಶ')));
+    }
+
     @Override
     protected void tearDown() throws Exception {
         super.tearDown();
