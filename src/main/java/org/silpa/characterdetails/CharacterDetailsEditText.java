@@ -2,14 +2,15 @@ package org.silpa.characterdetails;
 
 import android.content.Context;
 import android.util.AttributeSet;
-import android.widget.EditText;
+
+import org.silpa.render.IndicEditText;
 
 import java.util.Map;
 
 /**
  * Created by sujith on 12/6/14.
  */
-public class CharacterDetailsEditText extends EditText implements CharacterDetailsInterface {
+public class CharacterDetailsEditText extends IndicEditText implements CharacterDetailsInterface {
 
     private Context mContext;
     private CharacterDetails characterDetails;
