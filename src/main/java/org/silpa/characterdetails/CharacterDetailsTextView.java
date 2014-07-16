@@ -2,15 +2,14 @@ package org.silpa.characterdetails;
 
 import android.content.Context;
 import android.util.AttributeSet;
-
-import org.silpa.render.IndicTextView;
+import android.widget.TextView;
 
 import java.util.Map;
 
 /**
  * Created by sujith on 12/6/14.
  */
-public class CharacterDetailsTextView extends IndicTextView implements CharacterDetailsInterface {
+public class CharacterDetailsTextView extends TextView implements CharacterDetailsInterface {
 
     private Context mContext;
     private CharacterDetails characterDetails;

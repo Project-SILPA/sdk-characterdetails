@@ -16,17 +16,6 @@ jdk: openjdk7
 notifications:
   email: false
 
-before_install:
-  - git clone https://github.com/SujithVadakkepat/sdk-common.git
-
-  # for render module
-  - git clone https://github.com/SujithVadakkepat/sdk-render.git
-  - cd sdk-render
-
-  # install android ndk and build harfbuzz and come back
-  - ./build_script.sh
-  - cd ..
-
 install: gradle clean build
 
 script: gradle check
