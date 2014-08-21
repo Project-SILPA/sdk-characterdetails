@@ -40,41 +40,6 @@ The above function `obj.getCharacterDetailsAsArray(String);` accepts unicode str
 The above function `obj.getCharacterDetailsAsMap(String);` accepts unicode string and outputs details of characters in a map.
 
 
-#### CharacterDetailsEditText and  CharacterDetailsTextView
-
-EditText
-```
-
-        <org.silpa.characterdetails.CharacterDetailsEditText
-                android:id="@+id/edtCharDetails"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content" />
-                
-                 
-```
-
-TextView
-```
-
-        <org.silpa.characterdetails.CharacterDetailsTextView
-                android:id="@+id/tvCharDetails"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-                
-                 
-```
-
-Details can be extracted by :
-
-```
-        CharacterDetailsEditText edtCharacterDetails = (CharacterDetailsEditText)
-                        view.findViewById(R.id.edtCharDetails);
-        CharacterDetailsObject[] arr = edtCharacterDetails.getCharacterDetailsAsArray();
-        Map<Character, CharacterDetailsObject> map = edtCharacterDetails.getCharacterDetailsAsMap();
-```
-
-Similarly for CharacterDetailsTextView.
-
 #### Get module name and information
 ```
         String moduleName = obj.getModuleName();
