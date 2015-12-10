@@ -1,4 +1,4 @@
-package org.silpa.characterdetails;
+package org.libindic.characterdetails;
 
 import android.content.Context;
 import android.util.Log;

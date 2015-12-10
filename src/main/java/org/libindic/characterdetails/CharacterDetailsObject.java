@@ -1,4 +1,4 @@
-package org.silpa.characterdetails;
+package org.libindic.characterdetails;
 
 /**
  * Created by sujith on 23/5/14.

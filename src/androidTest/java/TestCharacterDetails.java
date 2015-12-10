@@ -3,8 +3,8 @@ import android.test.suitebuilder.annotation.LargeTest;
 import android.test.suitebuilder.annotation.MediumTest;
 import android.test.suitebuilder.annotation.SmallTest;
 
-import org.silpa.characterdetails.CharacterDetails;
-import org.silpa.characterdetails.CharacterDetailsObject;
+import org.libindic.characterdetails.CharacterDetails;
+import org.libindic.characterdetails.CharacterDetailsObject;
 
 import java.util.Map;
 
